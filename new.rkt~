@@ -1,0 +1,30 @@
+#lang racket
+(provide (all-defined-out))
+(define s "hello"); like a val binding in ml 
+(define x 3)
+(define y (+ x 2)) ; the + is a function and the result is bound to y
+(define yi
+  (lambda (x)
+    (* x x x)))
+(define g (yi 20))
+(define (fact n)
+  (cond [(= n 0) 1]
+        [(* n (fact (- n 1)))]))
+
+
+; sum of numbers, used the cond operator thing, acts like an "if, else, tjen"
+; kind of thing 
+
+(define (sum-list listy)
+  (cond [(null? listy) 0]
+        [else (+ (car listy) (sum-list (cdr listy)))]))
+
+
+
+
+
+
+
+
+
+
